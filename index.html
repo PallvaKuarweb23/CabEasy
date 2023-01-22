@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PalCar</title>
 </head>
+</head>
+
 <body>
-    <div id="out">
+    <div id="container">
         <div id="main">
             <h1>Select your country/city</h1>
         </div>
@@ -27,6 +29,36 @@
                 <option value="Bangalore">Bangalore</option>
                 <option value="Hyderabad">Hyderabad</option>
                 <option value="Pune">Pune</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Indore">Indore</option>
+                <option value="Visakhapatnam">Visakhapatnam</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Ambala">Ambala</option>
+                <option value="Bhubaneshwar">Bhubaneshwar</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Amritsar">Amritsar</option>
             </select><br>
+            <input type="button" value="CONFIRM" id="submit">
+        </div>
+    </div>
+</body>
+
+</html>
+            <script>
+                document.getElementById("submit").addEventListener("click", next);
+                function next() {
+                    let selected_city = document.getElementById("city").value;
+                    let selected_country = document.getElementById("country").value;
+                    let submit = document.getElementById("submit");
+                    if (selected_city !== "" && selected_country !== "") {
+                        window.location.href = "home.html";
+                    }
+                    localStorage.setItem("city", selected_city);
+                    localStorage.setItem("country", selected_country);
+                    console.log(selected_city);
+                }
+            </script>
 </body>
 </html>
